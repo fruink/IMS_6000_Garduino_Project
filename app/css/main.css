@@ -1,0 +1,102 @@
+@charset "UTF-8";
+/* CSS Document */
+
+ #mainHeader {
+    background-color: #9db777;
+  }
+
+img {
+    max-width: 100%; }
+
+body {
+  margin: 0;
+  font-family: "Calibri", sans-serif;
+}
+
+.hidden {
+  display: none; }
+
+
+  #logoCon {
+    background-color: #9db777;
+    padding: 10px;
+  }
+
+#logo {
+  display: none;
+}
+
+ #profile {
+  width: 40px;
+ }
+
+
+  #smallLogo {
+    width: 50px;
+  }
+
+ #sloganTxt {
+  color: #fff; 
+  font-size: 20px;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+  @media screen and (min-width: 800px) {
+
+ img {
+    max-width: 100%; }
+
+ body {
+  margin: 0;
+  font-family: "Calibri", sans-serif;
+}
+
+.hidden {
+  display: none; }
+
+#container {
+    max-width: 1200px;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-gap: 10px; }
+
+ #mainHeader {
+    background-color: #9db777;
+    grid-column: 1/-1;
+  }
+
+#logo {
+  width: 200px;
+}
+
+ #logoCon {
+ padding: 10px;
+ }
+
+ #smallLogo {
+display: none;
+}
+
+#slogan {
+  color: #fff;
+  font-size: 20px;
+}
+
+ #profile {
+  width: 40px;
+  grid-column: 11/12;
+ }
+
+
+  }
