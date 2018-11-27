@@ -1,32 +1,20 @@
-var Readable = require('stream').Readable  
-var util = require('util')  
-var five = require('johnny-five')
+var app = require('app');
+var BrowserWindow = require('browser-window');
 
-util.inherits(MyStream, Readable)  
-function MyStream(opt) {  
-  Readable.call(this, opt)
-}
-MyStream.prototype._read = function() {};  
-// hook in our stream
-process.__defineGetter__('stdin', function() {  
-  if (process.__stdin) return process.__stdin
-  process.__stdin = new MyStream()
-  return process.__stdin
-})
+var mainWindow = null;
 
-var board = new five.Board();
-var valueDiv = document.querySelector("#plantValue");
+app.on('ready', function () {
+  mainWindow = new BrowserWindow({
+    height: 505,
+    resizable: false,
+    title: 'j5/electron template',
+    width: 595,
+	frame: false
+  });
 
-board.on("ready", function(){
-	var sensor = new five.Sensor({
-		pin: "A0",
-		freq: 250, //emit data every 250ms,
-		threshold: 2
-	});
+  mainWindow.loadURL('file://' + __dirname + '/app/index.html');
 
-	sensor.on("change", function(){
-		var sensorInfo = this.value;
-		valueDiv.innerHTML = sensorInfo;
-	});
-
+  mainWindow.on('closed', function () {
+    mainWindow = null;
+  });
 });
