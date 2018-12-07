@@ -30,7 +30,6 @@ Connect an LED directly to pin 12 on the bread board.
 
 Clone the repo and npm install the example directory
 
-```
 git clone https://github.com/sofroniewn/electron-johnny-five-examples
 cd electron-johnny-five-examples/1-led
 npm install
